@@ -10,7 +10,7 @@
                         <p>Add</p>
                     </div>
                 </nuxt-link>
-                <div class="Button ml-4" id="delete-product-btn">
+                <div class="Button ml-4" id="delete-product-btn" @click="MassDelete">
                     <p>Mass Delete</p>
                 </div>
             </div>
@@ -44,6 +44,12 @@ export default {
            this.Items = response.data;
            console.log(response)
         },
+        async MassDelete() {
+            let response = await this.$axios.post("api/deleteProducts.php", this.checkedItems);
+            if(response.data == "Succesfully Deleted") {
+                this.getItems();
+            }
+        }
     },
     mounted() {
         this.getItems();
