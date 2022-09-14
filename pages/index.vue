@@ -45,7 +45,10 @@ export default {
            console.log(response)
         },
         async MassDelete() {
-            let response = await this.$axios.post("api/deleteProducts.php", this.checkedItems);
+            let config = {
+                headers: { 'content-type': 'application/x-www-form-urlencoded' }
+            }
+            let response = await this.$axios.post("api/deleteProducts.php", this.checkedItems, config);
             if(response.data == "Succesfully Deleted") {
                 this.getItems();
             }
