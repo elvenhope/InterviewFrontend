@@ -189,10 +189,7 @@ export default {
           Price: this.Price,
         }
         data.Properties = this.getString
-        let config = {
-          headers: { 'content-type': 'application/x-www-form-urlencoded' }
-        }
-        let response = await this.$axios.post('api/addProducts.php', data, config)
+        let response = await this.$axios.post('api/addProducts.php', data)
         if (response.data == 'Succesfully Added') {
           this.$router.push({ path: '/' })
         }

@@ -41,14 +41,13 @@ export default {
     methods: {
         async getItems() {
            let response = await this.$axios.get("api/getProducts.php");
-           this.Items = response.data;
+           if(response.data != "0 results") {
+            this.Items = response.data;
+           }
            console.log(response)
         },
         async MassDelete() {
-            let config = {
-                headers: { 'content-type': 'application/x-www-form-urlencoded' }
-            }
-            let response = await this.$axios.post("api/deleteProducts.php", this.checkedItems, config);
+            let response = await this.$axios.post("api/deleteProducts.php", this.checkedItems);
             if(response.data == "Succesfully Deleted") {
                 this.getItems();
             }
