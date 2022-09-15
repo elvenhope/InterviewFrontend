@@ -43,6 +43,8 @@ export default {
            let response = await this.$axios.get("api/getProducts.php");
            if(response.data != "0 results") {
             this.Items = response.data;
+           } else {
+            this.Items = [];
            }
            console.log(response)
         },
