@@ -10,9 +10,9 @@
                         <p>ADD</p>
                     </div>
                 </nuxt-link>
-                <div class="Button ml-4" id="delete-product-btn" @click="MassDelete">
+                <button class="Button ml-4" id="delete-product-btn" @click="MassDelete">
                     <p>MASS DELETE</p>
-                </div>
+                </button>
             </div>
         </div>
         <div class="Items">
