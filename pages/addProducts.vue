@@ -5,9 +5,9 @@
         <p>Product Add</p>
       </div>
       <div class="ButtonSection">
-        <div class="Button" @click="submitForm" id="Save">
+        <button class="Button" @click="submitForm" id="Save">
           <p>Save</p>
-        </div>
+        </button>
         <nuxt-link to="/" class="text-decoration-none">
           <div class="Button ml-4" id="delete-product-btn">
             <p>cancel</p>
