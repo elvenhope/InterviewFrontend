@@ -111,7 +111,7 @@
               >
                 <div class="ItemBoxInput">
                   <p>Length (CM)</p>
-                  <input type="length" v-model="Length" id="lenght" />
+                  <input type="text" v-model="Length" id="length" />
                 </div>
                 <span class="err-txt">{{ errors[0] }}</span>
               </ValidationProvider>
