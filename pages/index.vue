@@ -7,18 +7,18 @@
              <div class="ButtonSection">
                 <nuxt-link to="addProducts" class="text-decoration-none">
                     <div class="Button">
-                        <p>Add</p>
+                        <p>ADD</p>
                     </div>
                 </nuxt-link>
                 <div class="Button ml-4" id="delete-product-btn" @click="MassDelete">
-                    <p>Mass Delete</p>
+                    <p>MASS DELETE</p>
                 </div>
             </div>
         </div>
         <div class="Items">
             <div v-for="item in Items" :key="item.id" class="Item">
                 <div class="checkboxDiv">
-                    <input type="checkbox" v-model="checkedItems" :value="item.id">
+                    <input type="checkbox" v-model="checkedItems" :value="item.id" class="delete-checkbox">
                 </div>
                 <div class="InformationDiv">
                     <p>{{item.SKU}}</p>
